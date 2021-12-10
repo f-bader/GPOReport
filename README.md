@@ -26,7 +26,7 @@ $CheckSettings = @{
 
 ```powershell
 #region Query one domain
-Get-SettingsFromGPOs -Domain "your.dom.ain" -CheckSetting $CheckSettings
+Get-SettingsFromGPO -Domain "your.dom.ain" -CheckSetting $CheckSettings
 #endregion
 
 #region Query multiple domains and save to file
@@ -35,7 +35,7 @@ $Domains = @(
     "your.dom2.ain"
 )
 # Export data as JSON
-$Report = $Domains | Get-SettingsFromGPOs -CheckSetting $CheckSettings
+$Report = $Domains | Get-SettingsFromGPO -CheckSetting $CheckSettings
 $Report | ConvertTo-Json | Out-File -FilePath "C:\Temp\GPOs.json" -Encoding UTF8
 #endregion
 ```
